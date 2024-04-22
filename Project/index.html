@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Feedback Form</h1>
+    <form action="post.php" method="POST">
+        <label for="student_id">Student ID :</label>
+        <input type="text" id="student_id" name="student_id" required min="1" max="99999999">
+        <label for="submissionDate">Submission Date:</label>
+        <input type="date" id="submissionDate" name="submissionDate" required>
+        <label for="feedback">Feedback (Not more than 200 words):</label>
+        <textarea id="feedback" name="feedback" rows="4" maxlength="200" required></textarea>
+        <input type="hidden" id="feedbackNumber" name="feedbackNumber" value="12345">
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+

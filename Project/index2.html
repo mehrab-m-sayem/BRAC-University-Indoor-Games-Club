@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <h1>Payment Details</h1>
+    <form action="process_payment.php" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="student_id">Student ID (Primary Key):</label>
+        <input type="number" id="student_id" name="student_id" required>
+
+        <label for="transactionDate">Transaction Date:</label>
+        <input type="date" id="transactionDate" name="transactionDate" required>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" step="0.01" required>
+
+        <label for="purpose">Purpose:</label>
+        <input type="text" id="purpose" name="purpose" required>
+
+        <label for="transactionMethod">Transaction Method:</label>
+        <select id="transactionMethod" name="transactionMethod" onchange="showAdditionalFields()">
+            <option value="online">Online</option>
+            <option value="offline">Offline</option>
+        </select>
+        <div id="additionalFields"></div>
+
+        <button type="submit">Submit Payment</button>
+    </form>
+
+    <script src="payment.js"></script>
+</body>
+</html>
